@@ -20,9 +20,9 @@ app.use('/api/messages', messagesRouter);
 
 //make ready for deployment
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(Path.join(_dirname,"../../frontend/dist")))
+    app.use(express.static(Path.join(_dirname,"../frontend/dist")))
     app.get("*",(_,res)=>{
-        res.sendFile(Path.join(_dirname,"../../frontend","dist","index.html"))
+        res.sendFile(Path.join(_dirname,"../frontend","dist","index.html"))
     })
 }
 
